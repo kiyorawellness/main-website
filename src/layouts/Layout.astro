@@ -20,7 +20,7 @@ const { title, description = "Premium Japanese Wellness & Spa Experience" } = As
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/main-website/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Kiyora Wellness</title>
     <meta name="description" content={description} />
@@ -29,15 +29,15 @@ const { title, description = "Premium Japanese Wellness & Spa Experience" } = As
     <!-- Header -->
     <header class="fixed w-full z-50 transition-all duration-300 bg-charcoal-900/90 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-3xl font-serif text-white tracking-widest uppercase">
+        <a href="/main-website/" class="text-3xl font-serif text-white tracking-widest uppercase">
           Kiyora
         </a>
         
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 items-center">
-          <a href="/" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Home</a>
-          <a href="/menu" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Rituals</a>
-          <a href="/partnerships" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">B2B</a>
+          <a href="/main-website/" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Home</a>
+          <a href="/main-website/menu" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Rituals</a>
+          <a href="/main-website/partnerships" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">B2B</a>
           <a href="https://wa.me/1234567890?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20a%20luxury%20treatment." 
              target="_blank" 
              rel="noopener noreferrer" 
@@ -65,8 +65,8 @@ const { title, description = "Premium Japanese Wellness & Spa Experience" } = As
         <div>
           <h4 class="text-lg font-serif mb-4 text-white">Experience</h4>
           <ul class="space-y-2 text-sm text-white/60 font-light">
-            <li><a href="/menu" class="hover:text-gold-muted transition-colors">Spa Menu</a></li>
-            <li><a href="/partnerships" class="hover:text-gold-muted transition-colors">Resort Partnerships</a></li>
+            <li><a href="/main-website/menu" class="hover:text-gold-muted transition-colors">Spa Menu</a></li>
+            <li><a href="/main-website/partnerships" class="hover:text-gold-muted transition-colors">Resort Partnerships</a></li>
             <li><a href="#" class="hover:text-gold-muted transition-colors">Gift Cards</a></li>
           </ul>
         </div>
