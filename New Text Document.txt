@@ -1,0 +1,48 @@
+Objective: Build a premium, elegant static website for "Kiyora Wellness" using Astro and Tailwind CSS, deployable to GitHub Pages.
+
+
+
+Project Setup Required:
+
+1\. Initialize a modern static Astro project.
+
+2\. Configure Astro for static export (output: 'static' or configured for static building).
+
+3\. Install Tailwind CSS for luxury styling.
+
+4\. Set up a GitHub Actions workflow file (.github/workflows/deploy.yml) to automatically build and deploy the `dist/` folder to GitHub Pages.
+
+
+
+Design Requirements:
+
+\- Theme: Japanese minimalist luxury. Dark charcoal backgrounds, warm cream boxes, muted gold accents, lots of elegant white space.
+
+\- Typography: Premium Serif headings (Cormorant Garamond or Playfair Display), clean Sans-Serif body.
+
+\- Images: Use the local image files provided in the directory.
+
+
+
+Page Structure to Generate:
+
+1\. Home Page (index.astro): 
+
+&#x20;  - High-end hero section with large brand imagery.
+
+&#x20;  - Lead Generation: "Book Your Ritual" buttons that link directly to WhatsApp URL: `https://wa.me/YOUR\_PHONE\_NUMBER?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20a%20luxury%20treatment.`
+
+2\. Menu Page (menu.astro): Elegant grid layout showcasing treatments, description, and times using data from content.md.
+
+3\. B2B Portfolio Page (partnerships.astro): Professional corporate presentation aimed at 5-star hotels/resorts. Highlights operational capacity, Takumi standards, and premium partnership opportunities. Has a B2B contact CTA leading to WhatsApp/Email.
+
+
+
+Execution Steps for Agent:
+
+1\. Read content.md for website copy.
+
+2\. Generate components and pages.
+
+3\. Run `npm run build` locally to verify zero build errors.
+

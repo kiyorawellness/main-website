@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const therapies = [
+  {
+    title: "Midori Renewal Body Scrub",
+    description: "Midori = Nature / Green. A gentle exfoliating body scrub that removes dead skin cells, leaving the skin smooth, refreshed, and naturally radiant.",
+    prices: [{ duration: "90 Min", price: "₹4,999" }]
+  },
+  {
+    title: "Sakura Glow Polish",
+    description: "Inspired by cherry blossom purity, this luxurious scrub enhances skin brightness while restoring softness and hydration.",
+    prices: [{ duration: "90 Min", price: "₹4,999" }]
+  },
+  {
+    title: "Kanso Herbal Purity Scrub",
+    description: "Kanso = Simplicity. A natural herbal scrub designed to detoxify the skin, improve circulation, and promote healthy glow.",
+    prices: [{ duration: "90 Min", price: "₹5,999" }]
+  },
+  {
+    title: "Kiyomi Signature Body Polish",
+    description: "An exclusive exfoliation ritual using premium natural ingredients to rejuvenate the skin and prepare the body for deep relaxation.",
+    prices: [{ duration: "90 Min", price: "₹5,999" }]
+  }
+];
+---
+
+<Layout title="Body Polishes & Scrubs | Reveal Your Natural Radiance">
+  <section class="pt-40 pb-20 bg-charcoal-900 border-b border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-gold-light/5 via-charcoal-900 to-charcoal-900 z-0"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-in">
+      <a href="/menu" class="text-gold-muted text-sm uppercase tracking-widest hover:text-white transition-colors mb-8 inline-block">&larr; Back to Rituals</a>
+      <h1 class="text-5xl md:text-6xl font-serif text-white mb-6 tracking-wider">
+        Body Polishes & Scrubs
+      </h1>
+      <p class="text-xl text-white/60 font-light">
+        Reveal your inner radiance with the purity of nature.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-cream text-charcoal-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="space-y-0">
+        {therapies.map((therapy, index) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center fade-in py-24 border-b border-charcoal-900/10 last:border-0">
+            
+            <div class={`relative aspect-square md:aspect-[4/5] bg-charcoal-900 overflow-hidden shadow-2xl ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
+               <img src="/images/scrub.png" alt={therapy.title} class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
+            <div class={`space-y-8 ${index % 2 !== 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+              <div>
+                <h2 class="text-3xl lg:text-4xl font-serif mb-6 uppercase tracking-wider">{therapy.title}</h2>
+                <div class="w-12 h-px bg-gold-muted mb-6"></div>
+                <p class="text-lg font-light leading-relaxed text-charcoal-800">
+                  {therapy.description}
+                </p>
+              </div>
+
+              <div class="pt-8 border-t border-charcoal-900/10">
+                <p class="text-xs uppercase tracking-widest text-charcoal-800/60 mb-6">Select Duration to Book</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {therapy.prices.map(p => (
+                    <a href={`https://wa.me/1234567890?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(therapy.title)}%20(${encodeURIComponent(p.duration)}%20-%20${encodeURIComponent(p.price)}).`}
+                       class="group relative border border-charcoal-900/20 bg-transparent hover:border-gold-muted transition-colors overflow-hidden flex items-center justify-between p-5 cursor-pointer">
+                       
+                       <div class="absolute inset-0 bg-gold-muted/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                       
+                       <div class="relative z-10">
+                         <span class="block text-xs tracking-wider uppercase text-charcoal-800/80 mb-1">{p.duration}</span>
+                         <span class="block font-serif text-xl">{p.price}</span>
+                       </div>
+                       
+                       <div class="relative z-10 w-8 h-8 rounded-full border border-charcoal-900/20 flex items-center justify-center group-hover:bg-gold-muted group-hover:border-gold-muted group-hover:text-white transition-colors">
+                         <span class="text-sm">&rarr;</span>
+                       </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

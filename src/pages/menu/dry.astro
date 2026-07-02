@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const therapies = [
+  {
+    title: "Sei Zen Back & Shoulder Release",
+    description: "Sei = Balance. A focused 30-minute therapy to relieve stiffness and tension in the back and shoulders, restoring comfort and ease.",
+    prices: [{ duration: "30 Min", price: "₹1,299" }]
+  },
+  {
+    title: "Atama & Kubi Calm Touch",
+    description: "Atama = Head | Kubi = Neck. A soothing head and neck massage designed to ease stress, reduce headaches, and relax the nervous system.",
+    prices: [{ duration: "30 Min", price: "₹1,299" }]
+  },
+  {
+    title: "Ashi Revive Reflexology",
+    description: "Ashi = Feet. A revitalizing foot reflexology treatment that stimulates pressure points to improve circulation and reduce fatigue.",
+    prices: [{ duration: "30 Min", price: "₹1,299" }]
+  },
+  {
+    title: "Ki Flow Dry Therapy",
+    description: "Ki = Life energy. A revitalizing dry massage focused on stimulating energy pathways to reduce fatigue and promote natural body healing.",
+    prices: [{ duration: "60 Min", price: "₹1,699" }]
+  },
+  {
+    title: "Takumi Stretch Therapy",
+    description: "Takumi = Skilled craftsmanship. A precision-based dry therapy combining pressure and assisted stretching to enhance flexibility and muscular relief.",
+    prices: [{ duration: "60 Min", price: "₹1,699" }]
+  }
+];
+---
+
+<Layout title="Zen Dry Therapies | Restore Your Vital Flow">
+  <section class="pt-40 pb-20 bg-charcoal-900 border-b border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gold-muted/10 via-charcoal-900 to-charcoal-900 z-0"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-in">
+      <a href="/menu" class="text-gold-muted text-sm uppercase tracking-widest hover:text-white transition-colors mb-8 inline-block">&larr; Back to Rituals</a>
+      <h1 class="text-5xl md:text-6xl font-serif text-white mb-6 tracking-wider">
+        Zen Dry Therapies
+      </h1>
+      <p class="text-xl text-white/60 font-light">
+        Restore Your Vital Flow without the use of oils.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-cream text-charcoal-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="space-y-0">
+        {therapies.map((therapy, index) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center fade-in py-24 border-b border-charcoal-900/10 last:border-0">
+            
+            <div class={`relative aspect-square md:aspect-[4/5] bg-charcoal-900 overflow-hidden shadow-2xl ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
+               <img src="/images/dry.png" alt={therapy.title} class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
+            <div class={`space-y-8 ${index % 2 !== 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+              <div>
+                <h2 class="text-3xl lg:text-4xl font-serif mb-6 uppercase tracking-wider">{therapy.title}</h2>
+                <div class="w-12 h-px bg-gold-muted mb-6"></div>
+                <p class="text-lg font-light leading-relaxed text-charcoal-800">
+                  {therapy.description}
+                </p>
+              </div>
+
+              <div class="pt-8 border-t border-charcoal-900/10">
+                <p class="text-xs uppercase tracking-widest text-charcoal-800/60 mb-6">Select Duration to Book</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {therapy.prices.map(p => (
+                    <a href={`https://wa.me/1234567890?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(therapy.title)}%20(${encodeURIComponent(p.duration)}%20-%20${encodeURIComponent(p.price)}).`}
+                       class="group relative border border-charcoal-900/20 bg-transparent hover:border-gold-muted transition-colors overflow-hidden flex items-center justify-between p-5 cursor-pointer">
+                       
+                       <div class="absolute inset-0 bg-gold-muted/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                       
+                       <div class="relative z-10">
+                         <span class="block text-xs tracking-wider uppercase text-charcoal-800/80 mb-1">{p.duration}</span>
+                         <span class="block font-serif text-xl">{p.price}</span>
+                       </div>
+                       
+                       <div class="relative z-10 w-8 h-8 rounded-full border border-charcoal-900/20 flex items-center justify-center group-hover:bg-gold-muted group-hover:border-gold-muted group-hover:text-white transition-colors">
+                         <span class="text-sm">&rarr;</span>
+                       </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
