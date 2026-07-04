@@ -1,21 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import { CONTACT } from "../constants/contact";
+import partnershipCover from "../assets/images/partnership-cover.jpg";
+import partnershipInner from "../assets/images/partnership-inner.jpg";
 ---
 
 <Layout title="B2B Resort & Hotel Portfolio">
   <!-- Hero Section -->
   <section class="pt-40 pb-32 bg-charcoal-900 relative overflow-hidden">
-    <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-gold-muted/10 to-transparent"></div>
+    <div class="absolute inset-0 z-0">
+      <img
+        src={partnershipCover.src}
+        alt="Kiyora Spa Partnership"
+        class="w-full h-full object-cover opacity-90"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-charcoal-900/80 via-charcoal-900/50 to-charcoal-900"
+      >
+      </div>
+    </div>
+
+    <div
+      class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-gold-muted/10 to-transparent"
+    >
+    </div>
     <div class="max-w-7xl mx-auto px-6 relative z-10 fade-in">
-      <p class="text-gold-muted text-sm uppercase tracking-widest mb-6">For Luxury Resorts & 5-Star Hotels</p>
-      <h1 class="text-5xl md:text-7xl font-serif text-white mb-8 max-w-3xl leading-tight">
+      <p class="text-gold-muted text-sm uppercase tracking-widest mb-6">
+        For Luxury Resorts & 5-Star Hotels
+      </p>
+      <h1
+        class="text-5xl md:text-7xl font-serif text-white mb-8 max-w-3xl leading-tight"
+      >
         Premium Wellness Operations
       </h1>
-      <p class="text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-12">
-        We deliver end-to-end luxury spa management, elite therapist training, and bespoke wellness menu architecture to elevate your guest experience.
+      <p
+        class="text-xl text-white/70 font-light max-w-2xl leading-relaxed mb-12"
+      >
+        We deliver end-to-end luxury spa management, elite therapist training,
+        and bespoke wellness menu architecture to elevate your guest experience.
       </p>
-      <a href="#contact" class="inline-block px-8 py-4 bg-white text-charcoal-900 font-medium uppercase tracking-widest text-sm hover:bg-gold-muted transition-colors">
+      <a
+        href="#contact"
+        class="inline-block px-8 py-4 bg-white text-charcoal-900 font-medium uppercase tracking-widest text-sm hover:bg-gold-muted transition-colors"
+      >
         Partner With Us
       </a>
     </div>
@@ -26,16 +53,28 @@ import { CONTACT } from "../constants/contact";
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Abstract visual placeholder -->
-        <div class="w-full aspect-square bg-charcoal-900 rounded-sm relative overflow-hidden">
-           <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-charcoal-800 to-charcoal-900"></div>
-           <div class="absolute bottom-10 left-10 text-white/20 text-9xl font-serif italic">T</div>
+        <div
+          class="order-1 md:order-2 relative h-[500px] rounded-sm overflow-hidden bg-charcoal-800"
+        >
+          <img
+            src={partnershipInner.src}
+            alt="Partnership Image"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 border border-gold-muted/30 m-4 rounded-sm pointer-events-none"
+          >
+          </div>
         </div>
-        
+
         <div class="space-y-8">
           <h2 class="text-4xl md:text-5xl font-serif">The 'Takumi' Standard</h2>
           <div class="w-12 h-px bg-gold-muted"></div>
           <p class="text-lg font-light leading-relaxed text-charcoal-800">
-            Our operational excellence is rooted in the <strong>Takumi</strong> standard—a rigorous approach to therapist training, service consistency, and intentional touch. We don't just manage spas; we curate transformative wellness journeys that align with your property's prestige.
+            Our operational excellence is rooted in the <strong>Takumi</strong> standard—a
+            rigorous approach to therapist training, service consistency, and intentional
+            touch. We don't just manage spas; we curate transformative wellness journeys
+            that align with your property's prestige.
           </p>
           <ul class="space-y-4 font-light text-charcoal-800">
             <li class="flex items-center gap-4">
@@ -57,19 +96,29 @@ import { CONTACT } from "../constants/contact";
   </section>
 
   <!-- Contact CTA -->
-  <section id="contact" class="py-32 bg-charcoal-800 text-center border-t border-white/5">
+  <section
+    id="contact"
+    class="py-32 bg-charcoal-800 text-center border-t border-white/5"
+  >
     <div class="max-w-2xl mx-auto px-6 fade-in delay-200">
-      <h2 class="text-4xl font-serif text-white mb-6">Elevate Your Guest Experience</h2>
+      <h2 class="text-4xl font-serif text-white mb-6">
+        Elevate Your Guest Experience
+      </h2>
       <p class="text-white/60 font-light mb-12">
-        Let us design a seamless, highly profitable, and world-class spa operation for your property. 
+        Let us design a seamless, highly profitable, and world-class spa
+        operation for your property.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <a href="mailto:partnerships@kiyorawellness.com" 
-           class="w-full sm:w-auto px-8 py-4 bg-gold-muted text-charcoal-900 font-medium uppercase tracking-widest text-sm hover:bg-white transition-colors">
+        <a
+          href="mailto:partnerships@kiyorawellness.com"
+          class="w-full sm:w-auto px-8 py-4 bg-gold-muted text-charcoal-900 font-medium uppercase tracking-widest text-sm hover:bg-white transition-colors"
+        >
           Email Us
         </a>
-        <a href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20interested%20in%20a%20B2B%20partnership.`} 
-           class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-medium uppercase tracking-widest text-sm hover:border-gold-muted hover:text-gold-muted transition-colors">
+        <a
+          href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20interested%20in%20a%20B2B%20partnership.`}
+          class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-medium uppercase tracking-widest text-sm hover:border-gold-muted hover:text-gold-muted transition-colors"
+        >
           WhatsApp Us
         </a>
       </div>
