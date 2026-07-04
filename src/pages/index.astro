@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { CONTACT } from "../constants/contact";
+import oilImage from "../assets/images/oil.png";
 ---
 
 <Layout title="Home">
@@ -41,7 +42,7 @@ import { CONTACT } from "../constants/contact";
           <span class="relative z-10">Book Your Ritual</span>
         </a>
         <a
-          href="/rituals"
+          href={`${import.meta.env.BASE_URL}rituals`}
           class="px-8 py-4 border border-white/20 text-white hover:border-gold-muted hover:text-gold-muted transition-colors uppercase tracking-widest text-sm"
         >
           Explore Therapies
@@ -66,7 +67,7 @@ import { CONTACT } from "../constants/contact";
             standard of personal rejuvenation.
           </p>
           <a
-            href="/rituals"
+            href={`${import.meta.env.BASE_URL}rituals`}
             class="inline-block text-gold-muted font-medium uppercase tracking-widest hover:text-charcoal-900 transition-colors border-b border-gold-muted pb-1"
           >
             Discover Our Collection &rarr;
@@ -77,7 +78,7 @@ import { CONTACT } from "../constants/contact";
           class="aspect-[4/5] bg-charcoal-900 rounded-sm relative overflow-hidden shadow-2xl group"
         >
           <img
-            src="/images/oil.png"
+            src={oilImage.src}
             alt="Luxury Wellness Treatment"
             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
