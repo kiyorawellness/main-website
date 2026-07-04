@@ -1,47 +1,76 @@
 ---
-import '@fontsource/cormorant-garamond/300.css';
-import '@fontsource/cormorant-garamond/400.css';
-import '@fontsource/cormorant-garamond/600.css';
-import '@fontsource/inter/300.css';
-import '@fontsource/inter/400.css';
-import '../styles/global.css';
-import { Menu, X } from 'lucide-astro';
-
+import "@fontsource/cormorant-garamond/300.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "../styles/global.css";
+import {
+  Menu,
+  X,
+  MapPin,
+  Clock,
+  Instagram,
+  Facebook,
+  MessageCircle,
+  Mail,
+  Phone,
+} from "lucide-astro";
+import { CONTACT, SOCIAL_LINKS, ADDRESS } from "../constants/contact";
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Premium Japanese Wellness & Spa Experience" } = Astro.props;
+const { title, description = "Premium Japanese Wellness & Spa Experience" } =
+  Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/main-website/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Kiyora Wellness</title>
     <meta name="description" content={description} />
   </head>
   <body class="flex flex-col min-h-screen">
     <!-- Header -->
-    <header class="fixed w-full z-50 transition-all duration-300 bg-charcoal-900/90 backdrop-blur-md border-b border-white/5">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/main-website/" class="text-3xl font-serif text-white tracking-widest uppercase">
-          Kiyora
+    <header
+      class="fixed w-full z-50 transition-all duration-300 bg-charcoal-900/90 backdrop-blur-md border-b border-white/5"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="/" class="block">
+          <img src="/images/logo.png" alt="Kiyora" class="h-12 w-auto" />
         </a>
-        
+
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 items-center">
-          <a href="/main-website/" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Home</a>
-          <a href="/main-website/menu" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">Rituals</a>
-          <a href="/main-website/partnerships" class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors">B2B</a>
-          <a href="https://wa.me/1234567890?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20a%20luxury%20treatment." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="px-6 py-2 border border-gold-muted text-gold-muted hover:bg-gold-muted hover:text-charcoal-900 transition-colors uppercase text-sm tracking-widest">
+          <a
+            href="/"
+            class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors"
+            >Home</a
+          >
+          <a
+            href="/rituals"
+            class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors"
+            >Rituals</a
+          >
+          <a
+            href="/partnerships"
+            class="text-sm uppercase tracking-widest hover:text-gold-muted transition-colors"
+            >Partnership</a
+          >
+          <a
+            href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20a%20luxury%20treatment.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-2 border border-gold-muted text-gold-muted hover:bg-gold-muted hover:text-charcoal-900 transition-colors uppercase text-sm tracking-widest"
+          >
             Book
           </a>
         </nav>
@@ -55,34 +84,106 @@ const { title, description = "Premium Japanese Wellness & Spa Experience" } = As
 
     <!-- Footer -->
     <footer class="bg-charcoal-800 border-t border-white/5 pt-16 pb-8">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+      >
         <div>
-          <h3 class="text-2xl font-serif mb-4 text-white tracking-widest">KIYORA</h3>
-          <p class="text-white/60 text-sm leading-relaxed font-light">
-            Rooted in the Japanese concept of 'Ki'. We balance spirit, clear the mind, and restore inner harmony through the art of Takumi.
+          <a href="/" class="block">
+            <img src="/images/logo.png" alt="Kiyora" class="h-8 w-auto" />
+          </a>
+          <p class="text-white/60 text-sm leading-relaxed font-light mt-4">
+            Rooted in the Japanese concept of 'Ki'. We balance spirit, clear the
+            mind, and restore inner harmony through the art of Takumi.
           </p>
         </div>
         <div>
           <h4 class="text-lg font-serif mb-4 text-white">Experience</h4>
           <ul class="space-y-2 text-sm text-white/60 font-light">
-            <li><a href="/main-website/menu" class="hover:text-gold-muted transition-colors">Spa Menu</a></li>
-            <li><a href="/main-website/partnerships" class="hover:text-gold-muted transition-colors">Resort Partnerships</a></li>
-            <li><a href="#" class="hover:text-gold-muted transition-colors">Gift Cards</a></li>
+            <li>
+              <a href="/rituals" class="hover:text-gold-muted transition-colors"
+                >Our Rituals</a
+              >
+            </li>
+            <li>
+              <a
+                href="/partnerships"
+                class="hover:text-gold-muted transition-colors"
+                >Partner with us</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about-us"
+                class="hover:text-gold-muted transition-colors">About Us</a
+              >
+            </li>
           </ul>
         </div>
         <div>
           <h4 class="text-lg font-serif mb-4 text-white">Connect</h4>
-          <p class="text-white/60 text-sm font-light mb-4">
-            104, SHREEYA AMALGA, OFF SBR, AHMEDABAD<br>
-            All days 11:30 AM to 09:30 PM
-          </p>
-          <a href="https://wa.me/1234567890?text=Hello%20Kiyora%20Wellness%2C%20I%20would%20like%20to%20book%20a%20luxury%20treatment." 
-             class="inline-block text-gold-muted hover:text-white transition-colors text-sm uppercase tracking-widest">
-            WhatsApp Us
-          </a>
+          <div class="text-white/60 text-sm font-light mb-4 space-y-3">
+            <a
+              href={ADDRESS.MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-start gap-2 hover:text-gold-muted transition-colors"
+            >
+              <MapPin class="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span class="text-left">{ADDRESS.TEXT}</span>
+            </a>
+            <div class="flex items-center gap-2">
+              <Clock class="w-4 h-4 flex-shrink-0" />
+              <span>All days 11:30 AM to 09:30 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-white/60">
+            <a
+              href={SOCIAL_LINKS.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-gold-muted transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram class="w-5 h-5" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.FACEBOOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-gold-muted transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook class="w-5 h-5" />
+            </a>
+            <a
+              href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-gold-muted transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle class="w-5 h-5" />
+            </a>
+            <a
+              href={`mailto:${CONTACT.EMAIL}`}
+              class="hover:text-gold-muted transition-colors"
+              aria-label="Email"
+            >
+              <Mail class="w-5 h-5" />
+            </a>
+            <a
+              href={`tel:${CONTACT.PHONE}`}
+              class="hover:text-gold-muted transition-colors"
+              aria-label="Phone"
+            >
+              <Phone class="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
-      <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center text-xs text-white/40 tracking-wider">
+      <div
+        class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center text-xs text-white/40 tracking-wider"
+      >
         &copy; {new Date().getFullYear()} Kiyora Wellness. All rights reserved.
       </div>
     </footer>

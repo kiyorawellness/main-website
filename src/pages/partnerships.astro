@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { CONTACT } from "../constants/contact";
 ---
 
 <Layout title="B2B Resort & Hotel Portfolio">
@@ -67,7 +68,7 @@ import Layout from '../layouts/Layout.astro';
            class="w-full sm:w-auto px-8 py-4 bg-gold-muted text-charcoal-900 font-medium uppercase tracking-widest text-sm hover:bg-white transition-colors">
           Email Us
         </a>
-        <a href="https://wa.me/1234567890?text=Hello%2C%20I%20am%20interested%20in%20a%20B2B%20partnership." 
+        <a href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=Hello%2C%20I%20am%20interested%20in%20a%20B2B%20partnership.`} 
            class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-medium uppercase tracking-widest text-sm hover:border-gold-muted hover:text-gold-muted transition-colors">
           WhatsApp Us
         </a>
