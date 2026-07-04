@@ -1,15 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { CONTACT } from "../../constants/contact";
-import oilImage from "../../assets/images/oil.png";
+import oilCover from "../../assets/images/oil-cover.jpg";
+import oilInner from "../../assets/images/oil-inner.jpg";
 const therapies = [
   {
     title: "Sakura Swedish Flow",
     description:
       "Gentle, flowing strokes using warm oils to improve circulation and create deep physical and mental relaxation.",
     prices: [
-      { duration: "60 Min", price: "₹2,299" },
-      { duration: "90 Min", price: "₹3,499" },
+      { duration: "60 Min", price: "₹2299" },
+      { duration: "90 Min", price: "₹3499" },
     ],
   },
   {
@@ -17,8 +18,8 @@ const therapies = [
     description:
       "A graceful fusion of long strokes and gentle acupressure with warm oils to balance body energy and induce deep calm.",
     prices: [
-      { duration: "60 Min", price: "₹2,299" },
-      { duration: "90 Min", price: "₹3,499" },
+      { duration: "60 Min", price: "₹2299" },
+      { duration: "90 Min", price: "₹3499" },
     ],
   },
   {
@@ -26,8 +27,8 @@ const therapies = [
     description:
       "Warm herbal oils soothe tired muscles, improve blood flow, and provide a comforting, spa-like onsen experience.",
     prices: [
-      { duration: "60 Min", price: "₹2,499" },
-      { duration: "90 Min", price: "₹3,699" },
+      { duration: "60 Min", price: "₹2499" },
+      { duration: "90 Min", price: "₹3699" },
     ],
   },
   {
@@ -35,8 +36,8 @@ const therapies = [
     description:
       "A skilled deep-pressure oil massage designed to release chronic muscle tension and restore strength and flexibility.",
     prices: [
-      { duration: "60 Min", price: "₹2,799" },
-      { duration: "90 Min", price: "₹3,999" },
+      { duration: "60 Min", price: "₹2799" },
+      { duration: "90 Min", price: "₹3999" },
     ],
   },
   {
@@ -44,8 +45,8 @@ const therapies = [
     description:
       "A deeply relaxing oil massage focused on relieving mental fatigue, emotional stress, and everyday tension.",
     prices: [
-      { duration: "60 Min", price: "₹2,799" },
-      { duration: "90 Min", price: "₹3,999" },
+      { duration: "60 Min", price: "₹2799" },
+      { duration: "90 Min", price: "₹3999" },
     ],
   },
   {
@@ -53,8 +54,8 @@ const therapies = [
     description:
       "A restorative oil therapy designed to ease soreness, enhance flexibility, and support faster muscle recovery.",
     prices: [
-      { duration: "60 Min", price: "₹2,799" },
-      { duration: "90 Min", price: "₹3,999" },
+      { duration: "60 Min", price: "₹2799" },
+      { duration: "90 Min", price: "₹3999" },
     ],
   },
 ];
@@ -64,9 +65,16 @@ const therapies = [
   <section
     class="pt-40 pb-20 bg-charcoal-900 border-b border-white/5 relative overflow-hidden"
   >
-    <div
-      class="absolute inset-0 bg-gradient-to-tr from-charcoal-800 to-charcoal-900 z-0"
-    >
+    <div class="absolute inset-0 z-0">
+      <img
+        src={oilCover.src}
+        alt="Signature Oil Therapies Rituals"
+        class="w-full h-full object-cover opacity-90"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-charcoal-900/80 via-charcoal-900/50 to-charcoal-900"
+      >
+      </div>
     </div>
     <div
       class="absolute right-0 bottom-0 w-64 h-64 bg-gold-muted/10 rounded-tl-full blur-3xl"
@@ -97,7 +105,7 @@ const therapies = [
           class="relative h-[50vh] lg:h-auto bg-charcoal-900 overflow-hidden shadow-2xl lg:sticky lg:top-24 lg:self-start lg:min-h-[80vh]"
         >
           <img
-            src={oilImage.src}
+            src={oilInner.src}
             alt="Signature Oil Therapies"
             class="absolute inset-0 w-full h-full object-cover opacity-80"
           />

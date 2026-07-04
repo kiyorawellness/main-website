@@ -1,50 +1,71 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { CONTACT } from "../constants/contact";
+import dryRitualImage from "../assets/images/dry-ritual.jpg";
+import oilRitualImage from "../assets/images/oil-ritual.jpg";
+import scrubRitualImage from "../assets/images/scrub-ritual.jpg";
+import coupleRitualImage from "../assets/images/couple-ritual.jpg";
+import ritualsHeader from "../assets/images/rituals-header.jpg";
 const therapies = [
   {
-    title: "Couple Wellness Rituals",
-    description: "Celebrate togetherness with our signature Kiyora Eternal Bliss Ritual. Begin with a romantic private jacuzzi soak followed by a synchronized full-body oil massage to deepen your emotional connection.",
-    price: "From ₹11,999",
-    category: "Signature",
-    features: ["Private Jacuzzi", "Synchronized Massage"],
-    slug: "couple-wellness-rituals"
+    title: "Dry Therapy Rituals",
+    description: "Revitalize your 'Ki' (Life Energy) without oil. Experience Ashi Reflexology or Takumi Stretch Therapy to stimulate pressure points, reduce fatigue, and promote natural body healing.",
+    price: "From ₹1299",
+    category: "Dry Therapies",
+    features: ["Ashi Reflexology", "Takumi Stretch Therapy"],
+    slug: "dry-therapy-rituals",
+    img: dryRitualImage.src
   },
   {
     title: "Signature Oil Therapy Rituals",
     description: "Restore harmony with Sakura Swedish Flow or Kanso Balinese massage. We use warm herbal oils and flowing strokes to soothe tired muscles and create deep physical and mental relaxation.",
-    price: "From ₹7,999",
+    price: "From ₹2299",
     category: "Oil Therapies",
     features: ["Sakura Swedish Flow", "Kanso Balinese", "Herbal Oils"],
-    slug: "signature-oil-therapy-rituals"
+    slug: "signature-oil-therapy-rituals",
+    img: oilRitualImage.src
   },
   {
     title: "Skin Renewal Rituals",
     description: "Reveal your natural radiance with the Midori Renewal Scrub or Sakura Glow Polish. These gentle exfoliation rituals use premium natural ingredients to remove dead cells and leave skin soft and hydrated.",
-    price: "From ₹4,999",
-    category: "Scrubs & Polish",
+    price: "From ₹4999",
+    category: "Scrubs & Polish Therapies",
     features: ["Midori Renewal Scrub", "Sakura Glow Polish"],
-    slug: "skin-renewal-rituals"
+    slug: "skin-renewal-rituals",
+    img: scrubRitualImage.src
   },
   {
-    title: "Dry Therapy Rituals",
-    description: "Revitalize your 'Ki' (Life Energy) without oil. Experience Ashi Reflexology or Takumi Stretch Therapy to stimulate pressure points, reduce fatigue, and promote natural body healing.",
-    price: "From ₹3,999",
-    category: "Dry Therapies",
-    features: ["Ashi Reflexology", "Takumi Stretch Therapy"],
-    slug: "dry-therapy-rituals"
+    title: "Couple Wellness Rituals",
+    description: "Celebrate togetherness with our signature Kiyora Eternal Bliss Ritual. Begin with a romantic private jacuzzi soak followed by a synchronized full-body oil massage to deepen your emotional connection.",
+    price: "From ₹1999",
+    category: "Couple Rituals",
+    features: ["Private Jacuzzi", "Synchronized Massage"],
+    slug: "couple-wellness-rituals",
+    img: coupleRitualImage.src
   }
 ];
 ---
 
 <Layout title="Spa Menu & Rituals">
   <!-- Header -->
-  <section class="pt-40 pb-20 bg-charcoal-900 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 text-center fade-in">
-      <h1 class="text-5xl md:text-6xl font-serif text-white mb-6 tracking-wider">
+  <section class="relative h-[40vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src={ritualsHeader.src}
+        alt="Kiyora Spa Rituals"
+        class="w-full h-full object-cover object-[center_65%] opacity-90"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-charcoal-900/80 via-charcoal-900/50 to-charcoal-900"
+      >
+      </div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20 fade-in">
+      <h1 class="text-5xl md:text-6xl font-serif text-white mb-6 tracking-wider leading-tight">
         The Kiyora Collection
       </h1>
-      <p class="text-xl text-white/60 font-light max-w-2xl mx-auto">
+      <p class="text-xl md:text-2xl text-white/90 font-light font-serif italic max-w-2xl mx-auto">
         Curated journeys of 'Sei' (Balance) and 'Ki' (Energy). 
       </p>
     </div>
@@ -55,14 +76,11 @@ const therapies = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24">
         {therapies.map((therapy, index) => (
-          <div class={`flex flex-col ${index % 2 !== 0 ? 'lg:mt-24' : ''} fade-in delay-${(index % 3) * 100}`}>
-            <!-- Abstract visual for treatment -->
+          <div class={`flex flex-col ${index % 2 !== 0 ? '' : ''} fade-in delay-${(index % 3) * 100}`}>
+            <!-- Therapy image for treatment -->
             <a href={`${import.meta.env.BASE_URL}/rituals/${therapy.slug}`} class="block w-full aspect-video bg-charcoal-800 mb-8 relative overflow-hidden group">
-               <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent transition-opacity group-hover:opacity-50"></div>
-               {index === 0 && <div class="absolute bottom-0 right-0 w-32 h-32 bg-gold-muted/10 rounded-tl-full blur-xl transition-transform duration-500 group-hover:scale-110"></div>}
-               {index === 1 && <div class="absolute top-0 left-0 w-40 h-40 bg-white/5 rounded-br-full blur-2xl transition-transform duration-500 group-hover:scale-110"></div>}
-               {index === 2 && <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gold-light/5 rounded-full blur-xl transition-transform duration-500 group-hover:scale-110"></div>}
-               {index === 3 && <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-bl-full blur-3xl transition-transform duration-500 group-hover:scale-110"></div>}
+               <img src={therapy.img} alt={therapy.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/40 to-transparent transition-opacity group-hover:opacity-30"></div>
             </a>
             
             <div class="flex items-start justify-between mb-4">
@@ -75,13 +93,14 @@ const therapies = [
               {therapy.description}
             </p>
             
-            <div class="flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+            <div class="flex items-center justify-between">
               <span class="text-white text-lg font-serif">{therapy.price}</span>
               <a href={`${import.meta.env.BASE_URL}/rituals/${therapy.slug}`} 
                  class="text-sm text-gold-muted uppercase tracking-widest hover:text-white transition-colors">
                 Explore Details &rarr;
               </a>
             </div>
+            <div class="border-b border-white/10 mt-4"></div>
           </div>
         ))}
       </div>
