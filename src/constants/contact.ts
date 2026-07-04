@@ -1,6 +1,6 @@
 export const CONTACT = {
   PHONE: "+919106020720",
-  WHATSAPP_NUMBER: "9106020720",
+  WHATSAPP_NUMBER: "+919106020720",
   WHATSAPP_MESSAGE: "Hello Kiyora Wellness, I would like to book a luxury treatment.",
   EMAIL: "info@kiyorawellness.com",
 };
