@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kiyorawellness.github.io',
-  base: '/main-website',
+  site: 'https://kiyorawellness.com',
+  base: '',
   vite: {
     plugins: [tailwindcss()]
   }
