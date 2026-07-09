@@ -78,13 +78,13 @@ const therapies = [
         {therapies.map((therapy, index) => (
           <div class={`flex flex-col ${index % 2 !== 0 ? '' : ''} fade-in delay-${(index % 3) * 100}`}>
             <!-- Therapy image for treatment -->
-            <a href={`${import.meta.env.BASE_URL}/rituals/${therapy.slug}`} class="block w-full aspect-video bg-charcoal-800 mb-8 relative overflow-hidden group">
+            <a href={`${import.meta.env.BASE_URL}rituals/${therapy.slug}`} class="block w-full aspect-video bg-charcoal-800 mb-8 relative overflow-hidden group">
                <img src={therapy.img} alt={therapy.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/40 to-transparent transition-opacity group-hover:opacity-30"></div>
             </a>
             
             <div class="flex items-start justify-between mb-4">
-              <a href={`${import.meta.env.BASE_URL}/rituals/${therapy.slug}`} class="group">
+              <a href={`${import.meta.env.BASE_URL}rituals/${therapy.slug}`} class="group">
                 <h3 class="text-3xl font-serif text-white group-hover:text-gold-muted transition-colors">{therapy.title}</h3>
               </a>
             </div>
@@ -95,7 +95,7 @@ const therapies = [
             
             <div class="flex items-center justify-between">
               <span class="text-white text-lg font-serif">{therapy.price}</span>
-              <a href={`${import.meta.env.BASE_URL}/rituals/${therapy.slug}`} 
+              <a href={`${import.meta.env.BASE_URL}rituals/${therapy.slug}`} 
                  class="text-sm text-gold-muted uppercase tracking-widest hover:text-white transition-colors">
                 Explore Details &rarr;
               </a>
